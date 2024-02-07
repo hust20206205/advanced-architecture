@@ -1,11 +1,24 @@
 import { Module } from '@nestjs/common';
 import { AlarmsModule } from './alarms/alarms.module';
+import { CoreModule } from './core/core.module';
+import { AlarmsInfrastructureModule } from './alarms/infrastructure/alarms-infrastructure.module';
+import { ApplicationBootstrapOptions } from './common/interfaces/application-bootstrap-option.interface';
 
 @Module({
-  imports: [AlarmsModule],
+  imports: [CoreModule],
   controllers: [],
   providers: [],
 })
 export class AppModule {
-   static
+  static register(options: ApplicationBootstrapOptions) {
+    return {
+      module: AppModule,
+      imports: [
+        CoreModule.forRoot(options),
+        AlarmsModule.withInfrastructure(
+          AlarmsInfrastructureModule.use(options.driver),
+        ),
+      ],
+    };
+  }
 }

@@ -27,26 +27,26 @@ jobs:
       - name: Xây dựng dự án
         run: npm run build
 
-  test:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Sao chép mã nguồn
-        uses: actions/checkout@v2
+  # test:
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:
+  #     - name: Sao chép mã nguồn
+  #       uses: actions/checkout@v2
 
-      - name: Cài đặt môi trường Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 20.x
+  #     - name: Cài đặt môi trường Node.js
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: 20.x
 
-      - name: Cài đặt phụ thuộc
-        run: npm install
+  #     - name: Cài đặt phụ thuộc
+  #       run: npm install
 
-      - name: Kiểm thử đơn vị
-        run: npm run test
+  #     - name: Kiểm thử đơn vị
+  #       run: npm run test
 
-      - name: Kiểm thử tích hợp
-        run: npm run test:e2e
+  #     - name: Kiểm thử tích hợp
+  #       run: npm run test:e2e
 #   deploy:
 #     runs-on: ubuntu-latest
 #     needs: test

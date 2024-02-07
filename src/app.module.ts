@@ -3,9 +3,10 @@ import { AlarmsModule } from './alarms/alarms.module';
 import { AlarmsInfrastructureModule } from './alarms/infrastructure/alarms-infrastructure.module';
 import { ApplicationBootstrapOptions } from './common/interfaces/application-bootstrap-option.interface';
 import { CoreModule } from './core/core.module';
+import { CqrsModule } from '@nestjs/cqrs';
 
 @Module({
-  imports: [CoreModule],
+  imports: [CqrsModule.forRoot(), CoreModule],
   controllers: [],
   providers: [],
 })

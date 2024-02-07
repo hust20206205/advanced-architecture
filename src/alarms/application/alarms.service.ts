@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CreateAlarmDto } from './create-alarm.dto';
-import { UpdateAlarmDto } from './update-alarm.dto';
+import { CreateAlarmDto } from '../presenters/http/dto/create-alarm.dto';
+import { UpdateAlarmDto } from '../presenters/http/dto/update-alarm.dto';
 
 @Injectable()
 export class AlarmsService {

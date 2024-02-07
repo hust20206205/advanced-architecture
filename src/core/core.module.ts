@@ -21,7 +21,6 @@ export class CoreModule {
           ]
         : [];
 
-        
     return {
       module: CoreModule,
       imports,

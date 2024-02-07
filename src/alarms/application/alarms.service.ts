@@ -5,7 +5,6 @@ import { CreateAlarmCommand } from './commands/create-alarm.command';
 import { AlarmRepository } from './ports/alarms.repository';
 import { AlarmFactory } from '../domain/factories/alarm.factory';
 
-
 @Injectable()
 export class AlarmsService {
   constructor(
@@ -13,13 +12,14 @@ export class AlarmsService {
     private readonly AlarmFactory: AlarmFactory,
   ) {}
   create(createAlarmCommand: CreateAlarmCommand) {
-
-
-    const alarm = this.AlarmFactory.create(createAlarmCommand.name, createAlarmCommand.severity)
-    return this.AlarmRepository.save(alarm)
+    const alarm = this.AlarmFactory.create(
+      createAlarmCommand.name,
+      createAlarmCommand.severity,
+    );
+    return this.AlarmRepository.save(alarm);
   }
 
   findAll() {
-    return  this.AlarmRepository.findAll()
+    return this.AlarmRepository.findAll();
   }
 }

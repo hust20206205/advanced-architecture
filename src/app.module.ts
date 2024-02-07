@@ -4,7 +4,6 @@ import { AlarmsInfrastructureModule } from './alarms/infrastructure/alarms-infra
 import { ApplicationBootstrapOptions } from './common/interfaces/application-bootstrap-option.interface';
 import { CoreModule } from './core/core.module';
 
-
 @Module({
   imports: [CoreModule],
   controllers: [],
@@ -18,9 +17,8 @@ export class AppModule {
         CoreModule.forRoot(options),
         AlarmsModule.withInfrastructure(
           AlarmsInfrastructureModule.use(options.driver),
-          ),
-        ],
-      };
-    }
+        ),
+      ],
+    };
   }
-  
+}

@@ -19,6 +19,6 @@ export class AlarmsService {
   }
 
   findAll() {
-    return this.queryBus.execute(new GetAlarmsQuery())
+    return this.queryBus.execute(new GetAlarmsQuery());
   }
 }

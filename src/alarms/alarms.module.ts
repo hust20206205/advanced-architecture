@@ -7,7 +7,12 @@ import { GetAlarmsQueryHandler } from './application/queries/get-alarms.query-ha
 
 @Module({
   controllers: [AlarmsController],
-  providers: [AlarmsService, AlarmFactory, CreateAlarmCommandHandler,GetAlarmsQueryHandler],
+  providers: [
+    AlarmsService,
+    AlarmFactory,
+    CreateAlarmCommandHandler,
+    GetAlarmsQueryHandler,
+  ],
 })
 export class AlarmsModule {
   static withInfrastructure(infrastructureModule: Type | DynamicModule) {

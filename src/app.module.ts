@@ -6,4 +6,6 @@ import { AlarmsModule } from './alarms/alarms.module';
   controllers: [],
   providers: [],
 })
-export class AppModule {}
+export class AppModule {
+   static
+}

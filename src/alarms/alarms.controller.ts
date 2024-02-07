@@ -8,8 +8,8 @@ import {
   Delete,
 } from '@nestjs/common';
 import { AlarmsService } from './alarms.service';
-import { CreateAlarmDto } from './dto/create-alarm.dto';
-import { UpdateAlarmDto } from './dto/update-alarm.dto';
+import { CreateAlarmDto } from './create-alarm.dto';
+import { UpdateAlarmDto } from './update-alarm.dto';
 
 @Controller('alarms')
 export class AlarmsController {

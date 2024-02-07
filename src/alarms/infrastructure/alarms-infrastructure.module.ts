@@ -4,7 +4,7 @@ import { Module } from '@nestjs/common';
 
 @Module({})
 export class AlarmsInfrastructureModule {
-  static use(driver: 'orm' | 'inmemory') {
+  static use(driver: 'orm' | 'in-memory') {
     const persistenceModule =
       driver == 'orm' ? OrmAlarmPersistenceModule : InMemoryAlarmRepository;
 

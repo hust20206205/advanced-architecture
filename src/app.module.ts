@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
 import { AlarmsModule } from './alarms/alarms.module';
-import { CoreModule } from './core/core.module';
 import { AlarmsInfrastructureModule } from './alarms/infrastructure/alarms-infrastructure.module';
 import { ApplicationBootstrapOptions } from './common/interfaces/application-bootstrap-option.interface';
+import { CoreModule } from './core/core.module';
+
 
 @Module({
   imports: [CoreModule],
@@ -17,8 +18,9 @@ export class AppModule {
         CoreModule.forRoot(options),
         AlarmsModule.withInfrastructure(
           AlarmsInfrastructureModule.use(options.driver),
-        ),
-      ],
-    };
+          ),
+        ],
+      };
+    }
   }
-}
+  

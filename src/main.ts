@@ -5,7 +5,8 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(
-    AppModule.register({ driver: 'in-memory' }),
+    // AppModule.register({ driver: 'in-memory' }),
+    AppModule.register({ driver: 'orm' }),
   );
 
   app.setGlobalPrefix('api/advanced-architecture');

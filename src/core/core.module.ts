@@ -14,9 +14,11 @@ export class CoreModule {
               port: 3306,
               username: 'root',
               password: '',
-              // database
+              database: 'nghia',
+              entities: [__dirname + '/**/*.entity{.ts,.js}'],
               autoLoadEntities: true,
               synchronize: true,
+              logging: true,
             }),
           ]
         : [];
